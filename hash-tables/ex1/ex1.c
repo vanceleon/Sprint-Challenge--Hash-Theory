@@ -46,3 +46,18 @@ void print_answer(Answer *answer)
   }
 }
 
+#ifndef TESTING
+int main(void)
+{
+  int weights_4[] = {12, 6, 7, 14, 19, 3, 0, 25, 40};
+
+  Answer* answer_4 = get_indices_of_item_weights(weights_4, 9, 7);
+
+  if (answer_4->index_1 != 6)
+    printf("Your function did not return the expected answer for input {12, 6, 7, 14, 19, 3, 0, 25, 40}");
+  if (answer_4->index_2 != 2)
+    printf("Your function did not return the expected answer for input {12, 6, 7, 14, 19, 3, 0, 25, 40}");
+
+  return 0;
+}
+#endif
