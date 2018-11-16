@@ -36,6 +36,7 @@ for (int i = 0; i < ht->capacity; i++) {
 
 
 
+
 // each struct field represents the item weights 
 // higher value index at index_1 
 // smaller at index_2
