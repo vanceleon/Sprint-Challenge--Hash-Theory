@@ -6,15 +6,25 @@
 typedef struct Answer {
   int index_1;
   int index_2;
-
 }Answer;
 
 
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
-
+  int hashKey = hash(weights, ht->capacity);
   // YOUR CODE HERE
+
+// insert weights and limit into 
+Answer *answer = answer;
+for (int i = 0; i < length; i++) {
+  hash_table_insert(ht, weights, answer);
+}
+
+int sumWeights = 0;
+while(sumWeights != limit && sumWeights > limit) {
+  
+}
 
 // pseudo code
 
