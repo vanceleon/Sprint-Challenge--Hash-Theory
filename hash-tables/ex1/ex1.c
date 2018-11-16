@@ -22,9 +22,10 @@ for (int i = 0; i < length; i++) {
 }
 
 int sumWeights = 0;
-while(sumWeights != limit && sumWeights > limit) {
+for (int i = 0; i < ht->capacity; i++) {
   
 }
+
 
 // pseudo code
 
