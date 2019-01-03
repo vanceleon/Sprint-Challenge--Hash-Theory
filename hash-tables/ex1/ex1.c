@@ -33,8 +33,8 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       // printf("\tw1: %d, w2: %d, found_index: %d\n", w1, w2, found_index);
       if(found_index > -1)
       {
-        answer->index_1 = j;
-        answer->index_2 = found_index;
+        answer->index_1 = found_index;
+        answer->index_2 = j;
         return answer;
       }
       // if true return that pair 
