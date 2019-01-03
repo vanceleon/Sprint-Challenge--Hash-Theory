@@ -4,10 +4,10 @@
 #include "hashtable.h"
 #include "ex2.h"
 
-typedef struct Ticket {
-  char *source;
-  char *destination;
-} Ticket;
+// typedef struct Ticket {
+//   char *source;
+//   char *destination;
+// } Ticket;
 
 
 char **reconstruct_trip(Ticket **tickets, int length)
@@ -15,22 +15,23 @@ char **reconstruct_trip(Ticket **tickets, int length)
   HashTable *hash = create_hash_table(16);
   char **route = malloc(length * sizeof(char *));
 
-  Ticket *pair = tickets;
-  // Ticket *destination = tickets.destination;
-
-
   // YOUR CODE 
-  // creating Linked Pair
-
-  for(int i = 0; i < length; i++) {
-    create_pair(pair->source[i],pair->destination[i]);
-  }
-  for(int i = 0; i < length; i++) {
-    
+  // Setup hash table, with sources as keys and destinations as values
+  for (int i = 0; i < length; i++ ){
+    hash_table_insert(hash, tickets[i]->source, tickets[i]->destination);
   }
 
+  char *midFlight;
+  char *source = "NONE";
+  for (int j = 0; j < length; j++) {
+  
+    midFlight = hash_table_retrieve(hash, source); //next flight
+    source = midFlight;
 
+    route[j] = strdup(midFlight);
 
+  }
+  print_route(route, length);
   return route;
 }
 
@@ -39,6 +40,7 @@ void print_route(char **route, int length)
   for (int i = 0; i < length; i++) {
     printf("%s\n", route[i]);
   }
+  printf("\n");
 }
 
 
