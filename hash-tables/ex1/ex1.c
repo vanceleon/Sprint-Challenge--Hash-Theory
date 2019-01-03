@@ -14,14 +14,6 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   for (int i = 0; i < length; i++) {
     hash_table_insert(ht, weights[i], i);
   }
-  printf("length %d\n ", length);
-  printf("weights %d\n ", weights[0]);  
-  // int sumWeights = 0;
-  // printf("\tBP %d", q++);
-
-  // for(int j = 0; j < 2; j++) {
-  //   printf("loops work at this point\n");
-  // }
 
   for (int j = 0; j < length; j++) {
       // get value from each index 
@@ -30,7 +22,6 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       int w2 = limit - w1;
       // test that value weight in hash function 
       int found_index = hash_table_retrieve(ht, w2);
-      // printf("\tw1: %d, w2: %d, found_index: %d\n", w1, w2, found_index);
       if(found_index > -1)
       {
         answer->index_1 = found_index;
@@ -40,28 +31,6 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       // if true return that pair 
       // if false continue 
   }
-  return NULL;
-
-
-  // pseudo code
-
-  // implement get indices of item weights
-  // finds two items sum of weights equals the weight limit
-  // will then return a struct
-
-  HashTable *itemWeights = hash_table_retrieve(ht, hashKey);
-
-
-
-  // each struct field represents the item weights 
-  // higher value index at index_1 
-  // smaller at index_2
-
-
-
-
-
-
   return NULL;
 }
 
